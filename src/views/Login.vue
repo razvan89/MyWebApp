@@ -107,12 +107,19 @@ export default {
   methods: {
     login() {
       console.log(this.email);
+      let username = this.getUserName();
+      this.$root.username = username;
       this.isLoggingIn = true;
       setTimeout(() => {
         this.isLoggingIn = false;
         this.isAlertShow = true;
         setTimeout(() => this.redirectLogin(), 1000);
       }, 1000);
+    },
+    getUserName () {
+      if (this.email && this.email.includes('@')) {
+        return this.email.slice(0, this.email.indexOf("@"));
+      } else return 'user';
     },
     redirectLogin() {
       this.$router.push({ name: "todos" });

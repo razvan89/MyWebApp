@@ -7,9 +7,7 @@
             App
           </b-navbar-brand>
         </b-navbar>
-        <b-nav-item-dropdown text="Welcome" right class="user-area">
-          <b-dropdown-item href="/">Sign Out</b-dropdown-item>
-        </b-nav-item-dropdown>
+        <dropdown-user />
       </div>
     <div class="todos">
       <div class="add-todo">
@@ -122,6 +120,9 @@
 </template>
 
 <script>
+
+import dropdownUser from '../components/DropdownUser';
+
 export default {
   data: function () {
     return {
@@ -129,6 +130,9 @@ export default {
       toDo: [],
       completed: [],
     };
+  },
+  components: {
+    'dropdown-user': dropdownUser
   },
   methods: {
     setToDoList: function () {
