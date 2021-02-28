@@ -124,38 +124,11 @@ export default {
     },
   },
 };
-// import { required, minLength, maxLenght } from 'vuelidate/lib/validators'
-// export default {
-//     name: 'FormRegistration',
-//     data() {
-//         return{
-//             username:'',
-//             email:'',
-//             password:'',
-//             website:'',
-//             phone:''
-//         }
-//     },
-//     validations: {
-//         username: {
-//             required
-            
-//         },
-//         email:{
-//             required
-//         },
-//         password: {
-//            required,
-//            minLenght: minLenght(3),
-//             maxLenght: maxLenght(10)
-//         }
 
-//     }
-// };
 </script>
 
 <style scoped>
-.user-area {
-  display: none;
-}
+  .user-area {
+    display: none;
+  }
 </style>
