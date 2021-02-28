@@ -93,7 +93,7 @@
               </thead>
 
               <tbody>
-                <tr v-for="(task, index) in toDo" :key="index + 'completed'">
+                <tr v-for="(task, index) in completed" :key="index + 'completed'">
                   <td>
                     <span>{{ task.name }}</span>
                   </td>
@@ -147,6 +147,8 @@ export default {
     },
     deleteTask: function (taskIndex) {
       this.$root.tasks.splice(taskIndex, 1);
+      this.setCompletedList();
+      this.setToDoList();
     },
   },
   created() {
