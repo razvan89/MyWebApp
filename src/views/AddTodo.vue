@@ -13,9 +13,9 @@
     <br /><br />
     <form v-on:submit="addTask">
       <div
-        class="d-flex justify-content-center align-content-center add-row form-group"
+        class="d-flex justify-content-center align-content-center add-row form-group align-items-center"
       >
-        <label for="new-todo" class="col-md-2 text-left">Todo Name: </label>
+        <label for="new-todo" class="col-md-2 text-left todo-labels">Todo Name: </label>
         <b-form-input
           id="new-todo"
           v-model="name"
@@ -26,7 +26,7 @@
       <div
         class="d-flex justify-content-center align-content-center add-row form-group"
       >
-        <label for="datepicker" class="col-md-2 text-left">Due date: </label>
+        <label for="datepicker" class="col-md-2 text-left todo-labels">Due date: </label>
         <b-form-datepicker
           id="datepicker"
           v-model="date"
@@ -36,7 +36,7 @@
       <div
         class="d-flex justify-content-center align-content-center add-row form-group"
       >
-        <label for="todo-status" class="col-md-2 text-left">Status: </label>
+        <label for="todo-status" class="col-md-2 text-left todo-labels">Status: </label>
         <b-form-select
           id="todo-status"
           v-model="selected"

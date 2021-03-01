@@ -49,13 +49,12 @@
               </tbody>
             </table></b-tab
           >
-          <b-tab title="My Incompleted Todos">
+          <b-tab title="Incompleted">
             <table class="table">
               <thead>
                 <th>Task Name</th>
                 <th>Status</th>
                 <th>Due Date</th>
-                <th>Delete</th>
               </thead>
 
               <tbody>
@@ -69,25 +68,16 @@
                   <td>
                     <span>{{ task.date }}</span>
                   </td>
-                  <td>
-                    <button
-                      class="btn btn-danger btn-block"
-                      @click="deleteTask(task)"
-                    >
-                      Delete
-                    </button>
-                  </td>
                 </tr>
               </tbody>
             </table></b-tab
           >
-          <b-tab title="My Completed Todos">
+          <b-tab title="Completed">
             <table class="table">
               <thead>
                 <th>Task Name</th>
                 <th>Status</th>
                 <th>Due Date</th>
-                <th>Delete</th>
               </thead>
 
               <tbody>
@@ -100,14 +90,6 @@
                   </td>
                   <td>
                     <span>{{ task.date }}</span>
-                  </td>
-                  <td>
-                    <button
-                      class="btn btn-danger btn-block"
-                      v-on:click="deleteTask(task)"
-                    >
-                      Delete
-                    </button>
                   </td>
                 </tr>
               </tbody>

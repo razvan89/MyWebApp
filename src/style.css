@@ -148,8 +148,11 @@
   font-weight: 700;
 }
 .nav-item {
-  font-size: 20px;
   font-weight: 700;
+}
+.nav-link {
+  display: block;
+  padding: 10px;
 }
 .user-area {
   font-weight: 500;
@@ -157,4 +160,46 @@
 }
 .addTodoTitle {
   font-weight: 800;
+}
+.login-buttons button,.login-buttons a{
+  min-width: 87px;
+}
+.table td, .table th {
+  vertical-align: middle;
+}
+@media all and (max-width: 600px){
+  .logo-img{
+    max-height: 30px;
+  }
+  .navbar-brand {
+    font-size: 12px;
+}
+.user-area {
+  font-size: 12px;
+}
+.btn{
+  font-size: 12px;
+  padding: 5px;
+}
+body{
+  font-size: 12px;
+}
+.table td, .table th {
+  padding: 5px 0;
+  font-size: 10px;
+}
+tr, th {
+  height: 35px;
+}
+.todo-labels {
+  max-width: 120px;
+  font-size: 15px;
+  font-weight: 800;
+}
+.custom-select{
+  font-size: 12px;
+}
+.form-control{
+  font-size: 12px;
+}
 }

@@ -10,7 +10,7 @@
         
       </div>
     <div class="d-flex center align-content-center">
-      <div class="col-md-6 login-register">
+      <b-form class="col-md-6 login-register">
         <div class="logo-oracle">
           <img alt=" logo" src="..\assets\logo.png" />
         </div>
@@ -74,9 +74,10 @@
           <loader-component width="10"></loader-component>
         </div>
         <div class="form-group d-flex login-buttons">
-          <router-link class="btn btn-secondary w-25" to="/">Back</router-link>
+          <router-link class="btn btn-secondary " to="/">Back</router-link>
           <button
-            class="btn btn-primary w-25"
+            type="submit"
+            class="btn btn-primary "
             id="register"
             @click.prevent="register"
             v-if="!isRegister"
@@ -84,7 +85,7 @@
             Register
           </button>
           <button
-            class="btn btn-primary w-25"
+            class="btn btn-primary "
             disabled
             @click.prevent="register"
             v-if="isRegister"
@@ -92,7 +93,7 @@
             <loader-component width="10"></loader-component>
           </button>
         </div>
-      </div>
+      </b-form>
     </div>
   </div>
 </template>

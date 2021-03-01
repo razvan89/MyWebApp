@@ -1,16 +1,15 @@
 <template>
   <div class="container">
     <div class="row header">
-        <b-navbar class="">
-          <b-navbar-brand href="/">
-            <img alt=" logo" class="logo-img" src="..\assets\logo.png" /> My web
-            App
-          </b-navbar-brand>
-        </b-navbar>
-        
-      </div>
+      <b-navbar class="">
+        <b-navbar-brand href="/">
+          <img alt=" logo" class="logo-img" src="..\assets\logo.png" /> My web
+          App
+        </b-navbar-brand>
+      </b-navbar>
+    </div>
     <div class="d-flex center align-content-center">
-      <div class="col-md-6 login-register">
+      <b-form class="col-md-6 login-register"  @submit.prevent="submitform">
         <img alt=" logo" src="..\assets\logo.png" />
         <div class="form-group">
           <input
@@ -48,12 +47,13 @@
           role="alert"
           :style="{ opacity: isAlertShow ? 1 : 0 }"
         >
-          Login successfully. <small>Waiting for redirect.</small>
+          Login successful. <small>Waiting for redirect.</small>
           <loader-component width="30"></loader-component>
         </div>
         <div class="form-group d-flex login-buttons">
           <button
-            class="btn btn-primary w-25"
+            type="submit"
+            class="btn btn-primary"
             id="login"
             @click.prevent="login"
             v-if="!isLoggingIn"
@@ -61,7 +61,8 @@
             Login
           </button>
           <button
-            class="btn btn-primary w-25"
+            type="submit"
+            class="btn btn-primary "
             disabled
             @click.prevent="login"
             v-if="isLoggingIn"
@@ -69,7 +70,7 @@
             <loader-component width="10"></loader-component>
           </button>
           <button
-            class="btn btn-primary w-25"
+            class="btn btn-primary "
             id="register"
             @click.prevent="register"
             v-if="!isRegister"
@@ -77,7 +78,7 @@
             Register
           </button>
           <button
-            class="btn btn-primary w-25"
+            class="btn btn-primary"
             disabled
             @click.prevent="register"
             v-if="isRegister"
@@ -85,7 +86,7 @@
             <loader-component width="10"></loader-component>
           </button>
         </div>
-      </div>
+      </b-form>
     </div>
   </div>
 </template>
@@ -116,10 +117,10 @@ export default {
         setTimeout(() => this.redirectLogin(), 1000);
       }, 1000);
     },
-    getUserName () {
-      if (this.email && this.email.includes('@')) {
+    getUserName() {
+      if (this.email && this.email.includes("@")) {
         return this.email.slice(0, this.email.indexOf("@"));
-      } else return 'user';
+      } else return "user";
     },
     redirectLogin() {
       this.$router.push({ name: "todos" });
@@ -139,7 +140,7 @@ export default {
 </script>
 
 <style scoped>
-.user-area{
+.user-area {
   display: none !important;
 }
 </style>
