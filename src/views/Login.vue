@@ -1,14 +1,13 @@
 <template>
   <div class="container">
     <div class="row header">
-        <b-navbar class="">
-          <b-navbar-brand href="/">
-            <img alt=" logo" class="logo-img" src="..\assets\logo.png" /> My web
-            App
-          </b-navbar-brand>
-        </b-navbar>
-        
-      </div>
+      <b-navbar class="">
+        <b-navbar-brand href="/">
+          <img alt=" logo" class="logo-img" src="..\assets\logo.png" /> My web
+          App
+        </b-navbar-brand>
+      </b-navbar>
+    </div>
     <div class="d-flex center align-content-center">
       <div class="col-md-6 login-register">
         <img alt=" logo" src="..\assets\logo.png" />
@@ -62,7 +61,7 @@
               Login
             </button>
             <button
-              type='submit'
+              type="submit"
               class="btn btn-primary w-25"
               disabled
               v-if="isLoggingIn"
@@ -70,7 +69,7 @@
               <loader-component width="10"></loader-component>
             </button>
             <button
-              type='submit'
+              type="submit"
               class="btn btn-primary w-25"
               id="register"
               @click.prevent="register"
@@ -87,9 +86,7 @@
               <loader-component width="10"></loader-component>
             </button>
           </div>
-        
         </b-form>
-
       </div>
     </div>
   </div>
@@ -124,10 +121,10 @@ export default {
     redirectLogin() {
       this.$router.push({ name: "todos" });
     },
-    getUserName () {
-      if (this.email && this.email.includes('@')) {
+    getUserName() {
+      if (this.email && this.email.includes("@")) {
         return this.email.slice(0, this.email.indexOf("@"));
-      } else return 'user';
+      } else return "user";
     },
     register() {
       this.isRegister = true;
@@ -144,7 +141,7 @@ export default {
 </script>
 
 <style scoped>
-.user-area{
+.user-area {
   display: none !important;
 }
 </style>

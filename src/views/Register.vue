@@ -1,20 +1,19 @@
 <template>
   <div class="container">
-      <div class="row header">
-        <b-navbar class="">
-          <b-navbar-brand href="/">
-            <img alt=" logo" class="logo-img" src="..\assets\logo.png" /> My web
-            App
-          </b-navbar-brand>
-        </b-navbar>
-        
-      </div>
+    <div class="row header">
+      <b-navbar class="">
+        <b-navbar-brand href="/">
+          <img alt=" logo" class="logo-img" src="..\assets\logo.png" /> My web
+          App
+        </b-navbar-brand>
+      </b-navbar>
+    </div>
     <div class="d-flex center align-content-center">
       <b-form class="col-md-6 login-register" @submit.prevent="register">
         <div class="logo-oracle">
           <img alt=" logo" src="..\assets\logo.png" />
         </div>
-        <div class="d-flex register-rows" >
+        <div class="d-flex register-rows">
           <div class="form-group">
             <input
               type="text"
@@ -42,7 +41,7 @@
               placeholder="Password *"
               required="true"
               id="password"
-               @change="validatePassword()"
+              @change="validatePassword()"
             />
           </div>
           <div class="form-group">
@@ -78,20 +77,16 @@
           <loader-component width="10"></loader-component>
         </div>
         <div class="form-group d-flex login-buttons">
-          <router-link class="btn btn-secondary " to="/">Back</router-link>
+          <router-link class="btn btn-secondary" to="/">Back</router-link>
           <button
             type="submit"
-            class="btn btn-primary "
+            class="btn btn-primary"
             id="register"
             v-if="!isRegister"
           >
             Register
           </button>
-          <button
-            class="btn btn-primary "
-            disabled
-            v-if="isRegister"
-          >
+          <button class="btn btn-primary" disabled v-if="isRegister">
             <loader-component width="10"></loader-component>
           </button>
         </div>
@@ -125,22 +120,21 @@ export default {
     redirectRegister() {
       this.$router.push({ name: "login" });
     },
-     validatePassword(){
-  var password = document.getElementById("password")
-  , confirm_password = document.getElementById("confirm_password");
-  if(password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Passwords Don't Match");
-  } else {
-    confirm_password.setCustomValidity('');
-  }
-},
+    validatePassword() {
+      var password = document.getElementById("password"),
+        confirm_password = document.getElementById("confirm_password");
+      if (password.value != confirm_password.value) {
+        confirm_password.setCustomValidity("Passwords Don't Match");
+      } else {
+        confirm_password.setCustomValidity("");
+      }
+    },
   },
 };
-
 </script>
 
 <style scoped>
-  .user-area {
-    display: none;
-  }
+.user-area {
+  display: none;
+}
 </style>
