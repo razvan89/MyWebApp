@@ -10,11 +10,11 @@
         
       </div>
     <div class="d-flex center align-content-center">
-      <b-form class="col-md-6 login-register">
+      <b-form class="col-md-6 login-register" @submit.prevent="register">
         <div class="logo-oracle">
           <img alt=" logo" src="..\assets\logo.png" />
         </div>
-        <div class="d-flex register-rows">
+        <div class="d-flex register-rows" >
           <div class="form-group">
             <input
               type="text"
@@ -41,6 +41,8 @@
               aria-describedby="emailHelp"
               placeholder="Password *"
               required="true"
+              id="password"
+               @change="validatePassword()"
             />
           </div>
           <div class="form-group">
@@ -49,6 +51,8 @@
               class="form-control"
               placeholder="Re-type Password *"
               required="true"
+              id="confirm_password"
+              @keyup="validatePassword()"
             />
           </div>
         </div>
@@ -79,7 +83,6 @@
             type="submit"
             class="btn btn-primary "
             id="register"
-            @click.prevent="register"
             v-if="!isRegister"
           >
             Register
@@ -87,7 +90,6 @@
           <button
             class="btn btn-primary "
             disabled
-            @click.prevent="register"
             v-if="isRegister"
           >
             <loader-component width="10"></loader-component>
@@ -123,6 +125,15 @@ export default {
     redirectRegister() {
       this.$router.push({ name: "login" });
     },
+     validatePassword(){
+  var password = document.getElementById("password")
+  , confirm_password = document.getElementById("confirm_password");
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+},
   },
 };
 

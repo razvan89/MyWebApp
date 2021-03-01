@@ -12,14 +12,14 @@
     <div class="d-flex center align-content-center">
       <div class="col-md-6 login-register">
         <img alt=" logo" src="..\assets\logo.png" />
-        <b-form @submit.prevent="login">
+        <form @submit.prevent="login">
           <div class="form-group">
             <input
               type="email"
               class="form-control"
               aria-describedby="emailHelp"
               placeholder="Enter email"
-              required="true"
+              required
               v-model="email"
             />
           </div>
@@ -28,7 +28,7 @@
               type="password"
               class="form-control"
               placeholder="Password"
-              required="true"
+              required
             />
           </div>
           <div class="text-left">
@@ -88,7 +88,7 @@
             </button>
           </div>
         
-        </b-form>
+        </form>
 
       </div>
     </div>
@@ -112,8 +112,6 @@ export default {
   methods: {
     login() {
       console.log(this.email);
-      let username = this.getUserName();
-      this.$root.username = username;
       this.isLoggingIn = true;
       setTimeout(() => {
         this.isLoggingIn = false;
@@ -123,11 +121,6 @@ export default {
     },
     redirectLogin() {
       this.$router.push({ name: "todos" });
-    },
-    getUserName () {
-      if (this.email && this.email.includes('@')) {
-        return this.email.slice(0, this.email.indexOf("@"));
-      } else return 'user';
     },
     register() {
       this.isRegister = true;
