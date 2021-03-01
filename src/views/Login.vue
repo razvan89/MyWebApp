@@ -48,7 +48,7 @@
             role="alert"
             :style="{ opacity: isAlertShow ? 1 : 0 }"
           >
-            Login successfully. <small>Waiting for redirect.</small>
+            Login successful. <small>Waiting for redirect.</small>
             <loader-component width="30"></loader-component>
           </div>
           <div class="form-group d-flex login-buttons">
